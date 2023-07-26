@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msb.api.model.mapper.ZipcodeMapper">
+
+    <resultMap id="baseResultMap" type="com.msb.api.model.dto.SettingDTO">
+        <id column="setting_id" property="settingId" jdbcType="INTEGER"/>
+        <id column="code" property="code" jdbcType="VARCHAR"/>
+        <id column="key" property="key" jdbcType="VARCHAR"/>
+        <id column="value" property="value" jdbcType="VARCHAR"/>
+        <id column="serialized" property="serialized" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getSetting" parameterType="String" resultMap="baseResultMap">
+        SELECT z.zipcode_id, z.name, r.code AS region FROM zipcode z JOIN region r ON z.region_id = r.region_id
+        <where>
+            z.zipcode = #{zipcode}
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msb.api.model.mapper.CardMapper">
+
+    <resultMap id="baseResultMap" type="com.msb.api.model.dto.CardDTO">
+        <id column="card_id" property="cardId" jdbcType="INTEGER"/>
+        <id column="client_id" property="clientId" jdbcType="INTEGER"/>
+        <id column="name" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getCards" parameterType="Long" resultMap="baseResultMap">
+        SELECT * FROM card
+        <where>
+            client_id = #{clientId}
+        </where>
+    </select>
+
+</mapper>

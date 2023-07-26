@@ -1,0 +1,40 @@
+.sd-left-section {
+  width: 100%;
+}
+.sd-table {
+  width: 100%;
+  line-height: 36px;
+}
+.sd-table td {
+  text-align: center;
+}
+.sd-bg {
+  background: #fafafa;
+}
+.sd-img {
+  margin: 0;
+  height: 160px;
+  color: "#fff";
+  line-height: 160px;
+  text-align: center;
+  background: #ffffff;
+}
+.sd-label-wrap {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+.sd-label-img {
+  width: 100px;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.ant-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.ant-card-bsdy {
+  padding: 10px !important;
+}
+.ant-table-pagination {
+  justify-content: center !important;
+}

@@ -1,0 +1,39 @@
+.od-left-section {
+  width: 100%;
+}
+.od-table {
+  width: 100%;
+  line-height: 36px;
+}
+.od-table td {
+  text-align: center;
+}
+.od-bg {
+  background: #fafafa;
+}
+.od-img {
+  margin: 0;
+  height: 160px;
+  color: "#fff";
+  line-height: 160px;
+  text-align: center;
+  background: #ffffff;
+}
+.od-label-wrap {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+.od-label-img {
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.ant-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.ant-card-body {
+  padding: 10px !important;
+}
+.ant-table-pagination {
+  justify-content: center !important;
+}

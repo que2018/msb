@@ -1,0 +1,7 @@
+.ft-wrap span {
+  font-size: 14px;
+}
+.ft-items {
+  padding: 10px 40px;
+  display: "flex";
+}

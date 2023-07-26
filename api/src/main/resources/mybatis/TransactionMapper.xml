@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msb.api.model.mapper.TransactionMapper">
+
+    <resultMap id="baseResultMap" type="com.msb.api.model.dto.TransactionDTO">
+        <id column="transaction_id" property="transactionId" jdbcType="BIGINT"/>
+        <id column="client_id" property="clientId" jdbcType="VARCHAR"/>
+        <id column="type" property="type" jdbcType="VARCHAR"/>
+        <id column="amount" property="amount" jdbcType="DOUBLE"/>
+        <id column="date_added" property="dateAdded" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="getTransactionsByClient" parameterType="Long" resultMap="baseResultMap">
+        SELECT * FROM transaction
+        <where>
+            client_id = #{clientId}
+        </where>
+    </select>
+
+</mapper>

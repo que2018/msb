@@ -1,0 +1,36 @@
+.h {
+  color: #e4ff04;
+}
+
+.h-slide-wrap {
+  margin: 0px;
+  height: 600px;
+  background: #364d79;
+}
+
+.h-slide {
+  width: 100%;
+}
+
+.h-banner1 {
+  padding: 40px 0px 40px 0px;
+}
+
+.h-banner1-b {
+  font-size: 50px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.h-banner1-s {
+  font-size: 20px;
+  text-align: center;
+}
+
+.c .ant-card-body {
+  padding: 20px !important;
+}
+
+.c-title {
+  line-height: 60px;
+}

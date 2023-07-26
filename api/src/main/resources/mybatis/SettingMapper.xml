@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msb.api.model.mapper.SettingMapper">
+
+    <resultMap id="baseResultMap" type="com.msb.api.model.dto.SettingDTO">
+        <id column="zipcode_id" property="zipcodeId" jdbcType="BIGINT"/>
+        <id column="name" property="name" jdbcType="VARCHAR"/>
+        <id column="region" property="region" jdbcType="VARCHAR"/>
+        <id column="zone" property="zone" jdbcType="VARCHAR"/>
+        <id column="territory" property="territory" jdbcType="VARCHAR"/>
+        <id column="zipcode" property="zipcode" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getSetting" parameterType="String" resultMap="baseResultMap">
+        SELECT * FROM setting
+        <where>
+            `key` = #{key}
+        </where>
+    </select>
+
+</mapper>

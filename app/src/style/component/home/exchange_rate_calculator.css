@@ -1,0 +1,9 @@
+.erc {
+  padding: 32px;
+  border-radius: 20px;
+  background: #2c2b2b;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.erc-btn {
+  float: right;
+}

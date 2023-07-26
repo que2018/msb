@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msb.api.model.mapper.AddressMapper">
+
+    <resultMap id="baseResultMap" type="com.msb.api.model.dto.AddressDTO">
+        <id column="address_id" property="addressId" jdbcType="BIGINT"/>
+        <id column="tracking" property="tracking" jdbcType="VARCHAR"/>
+        <id column="reference" property="reference" jdbcType="VARCHAR"/>
+        <id column="street" property="street" jdbcType="VARCHAR"/>
+        <id column="street2" property="street2" jdbcType="VARCHAR"/>
+        <id column="city" property="city" jdbcType="VARCHAR"/>
+        <id column="state" property="state" jdbcType="VARCHAR"/>
+        <id column="zipcode" property="zipcode" jdbcType="VARCHAR"/>
+        <id column="region" property="region" jdbcType="VARCHAR"/>
+        <id column="zone" property="zone" jdbcType="VARCHAR"/>
+        <id column="territory" property="territory" jdbcType="VARCHAR"/>
+        <id column="date_index" property="dateIndex" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="getAddresses" parameterType="com.msb.api.model.req.AddressReq" resultMap="baseResultMap">
+        SELECT * FROM address WHERE address_id > 0
+        <if test="tracking != null">
+            tracking = #{tracking}
+        </if>
+        <if test="reference != null">
+            reference = #{reference}
+        </if>
+        <if test="region != null">
+            region = #{region}
+        </if>
+        <if test="zone != null">
+            zone = #{zone}
+        </if>
+        <if test="territory != null">
+            territory = #{territory}
+        </if>
+        <if test="dateFrom != null">
+            AND date_index &gt;= #{dateFrom}
+        </if>
+        <if test="dateTo != null">
+            AND date_index &lt;= #{dateTo}
+        </if>
+        <if test="limit != null">
+            LIMIT #{limit}
+        </if>
+        <if test="start != null">
+            OFFSET #{start}
+        </if>
+    </select>
+
+    <select id="getTotalAddress" parameterType="com.msb.api.model.req.AddressReq">
+        SELECT COUNT(*) FROM address WHERE address_id > 0
+        <if test="tracking != null">
+            tracking = #{tracking}
+        </if>
+        <if test="reference != null">
+            reference = #{reference}
+        </if>
+        <if test="region != null">
+            region = #{region}
+        </if>
+        <if test="zone != null">
+            zone = #{zone}
+        </if>
+        <if test="territory != null">
+            territory = #{territory}
+        </if>
+        <if test="dateFrom != null">
+            AND date_index &gt;= #{dateFrom}
+        </if>
+        <if test="dateTo != null">
+            AND date_index &lt;= #{dateTo}
+        </if>
+        <if test="limit != 0">
+            LIMIT #{limit}
+        </if>
+        <if test="start != 0">
+            OFFSET #{start}
+        </if>
+    </select>
+
+    <select id="getMinAddressId" parameterType="com.msb.api.model.req.AddressReq">
+        SELECT address_id FROM address WHERE address_id > 0
+        <if test="dateFrom != null">
+            AND date_index &gt;= #{dateFrom}
+        </if>
+        <if test="dateTo != null">
+            AND date_index &lt;= #{dateTo}
+        </if>
+        ORDER BY address_id ASC LIMIT 1
+    </select>
+
+    <select id="getMaxAddressId" parameterType="com.msb.api.model.req.AddressReq">
+        SELECT address_id FROM address WHERE address_id > 0
+        <if test="dateFrom != null">
+            AND date_index &gt;= #{dateFrom}
+        </if>
+        <if test="dateTo != null">
+            AND date_index &lt;= #{dateTo}
+        </if>
+        ORDER BY address_id DESC LIMIT 1
+    </select>
+
+    <update id="updateAddress" parameterType="com.msb.api.model.req.AddressReq">
+        UPDATE address
+        <set>
+            <if test="region != null">region=#{region}</if>
+        </set>
+        WHERE address_id=#{addressId}
+    </update>
+
+</mapper>

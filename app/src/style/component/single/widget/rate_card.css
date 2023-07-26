@@ -1,0 +1,21 @@
+.rc-card .ant-card-head {
+  min-height: 50px;
+}
+.rc-desp {
+  color: #a9a9a9;
+}
+.rc-carrier {
+  font-weight: bold;
+}
+.rc-content {
+  height: 60px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.rc-name {
+  color: #a9a9a9;
+  font-size: 10px;
+}
+.rc-price {
+  float: right;
+}
