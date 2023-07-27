@@ -49,28 +49,28 @@ const PackageType = () => {
       <OptGroup label={renderGroupLabel("fedex")} >
         <Option value="FEDEX_ENVELOPE">
           <Space>
-            <span class="pt-option-name">FedEx Envelope</span>
-            <span class="pt-option-size">9-1/2" x 12-1/2'</span>
+            <span className="pt-option-name">FedEx Envelope</span>
+            <span className="pt-option-size">9-1/2" x 12-1/2'</span>
           </Space>
         </Option>
         <Option value="FEDEX_PAK">
           <Space>
-            <span class="pt-option-name">FedEx Pak</span>
-            <span class="pt-option-size">12" x 15-1/2"</span>
+            <span className="pt-option-name">FedEx Pak</span>
+            <span className="pt-option-size">12" x 15-1/2"</span>
           </Space>
         </Option>
       </OptGroup>
       <OptGroup label={renderGroupLabel("ups")} >
         <Option value="UPS_LETTER">
           <Space>
-            <span class="pt-option-name">UPS Letter</span>
-            <span class="pt-option-size">9-1/2" x 12-1/2"</span>
+            <span className="pt-option-name">UPS Letter</span>
+            <span className="pt-option-size">9-1/2" x 12-1/2"</span>
           </Space>
         </Option>
         <Option value="UPS_PAK">
           <Space>
-            <span class="pt-option-name">UPS Pak</span>
-            <span class="pt-option-size">12.75" x 16"</span>
+            <span className="pt-option-name">UPS Pak</span>
+            <span className="pt-option-size">12.75" x 16"</span>
           </Space>
         </Option>
       </OptGroup>

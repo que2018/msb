@@ -29,10 +29,10 @@ const Home = () => {
         }}
       >
         <Row gutter={24}>
-          <Col span={11}>
-              <ExchangeRateCalculator />
+          <Col span={10}>
+            <ExchangeRateCalculator />
           </Col>
-          <Col span={13}>
+          <Col span={14}>
             <Carousel>
               {SLIDES.map(function (item, index) {
                 return (
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
         <Row gutter={24}>
           <Col span={8}>
-            <Card 
+            <Card
               bordered={false}
               className="c"
               title={<div className="c-title">Card title</div>} >
@@ -58,7 +58,7 @@ const Home = () => {
             </Card>
           </Col>
           <Col span={8}>
-            <Card 
+            <Card
               bordered={false}
               className="c"
               title={<div className="c-title">Card title</div>} >
@@ -66,7 +66,7 @@ const Home = () => {
             </Card>
           </Col>
           <Col span={8}>
-            <Card 
+            <Card
               bordered={false}
               className="c"
               title={<div className="c-title">Card title</div>} >

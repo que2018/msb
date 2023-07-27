@@ -5,8 +5,6 @@ import axios from "axios"
 
 // ** Get Order
 export const getFee = createAsyncThunk("fee/getFee", async params => {
-  console.log(params)
-
   const response = await axios.post("/api/fee/get_fee", params)
   return response.data
 })
@@ -14,9 +12,13 @@ export const getFee = createAsyncThunk("fee/getFee", async params => {
 export const feeSlice = createSlice({
   name: "fee",
   initialState: {
-    fee: 0
+    fee: null
   },
-  reducers: {},
+  reducers: {
+    setFee: (state, action) => {
+      state.fee = action.payload
+    },
+  },
   extraReducers: builder => {
     builder.addCase(getFee.fulfilled, (state, action) => {
       console.log(action.payload)
@@ -25,5 +27,10 @@ export const feeSlice = createSlice({
     })
   }
 })
+
+export const {
+  setFee
+} = feeSlice.actions
+
 
 export default feeSlice.reducer
