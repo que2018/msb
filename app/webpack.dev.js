@@ -10,11 +10,11 @@ module.exports = merge(common, {
     historyApiFallback: true,
     proxy: {
       '/api': {
-        target: 'http://52.34.248.48:8000',
+        target: 'http://localhost:8080',
         pathRewrite: { '^/api': '' },
         secure: false,
         changeOrigin: true
-      },
+      }
     }
   }
  })

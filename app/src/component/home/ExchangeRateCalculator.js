@@ -2,6 +2,10 @@
 //React Import
 import React, { useState, useEffect } from "react"
 
+// Store & Actions Imports
+import { useDispatch, useSelector } from "react-redux"
+import { getFee } from "src/store/app/fee"
+
 //Antd Import
 import { Button, Form, Select, Input } from "antd"
 
@@ -9,6 +13,21 @@ import { Button, Form, Select, Input } from "antd"
 import "src/style/component/home/exchange_rate_calculator.css"
 
 const ExchangeRateCalculator = (props) => {
+  //Hooks
+  const dispatch = useDispatch()
+  const store = useSelector(state => state.fee)
+
+  const onFinish = values => {
+    dispatch(
+      getFee(values)
+    )
+  }
+
+  useEffect(() => {
+    if(store.fee) {
+      alert(store.fee)
+    }
+  }, [store.fee])
 
   return (
     <div class="erc">
@@ -16,6 +35,7 @@ const ExchangeRateCalculator = (props) => {
         name="form_fee"
         initialValues={{ remember: true }}
         autoComplete="off"
+        onFinish={onFinish}
       >
         <Form.Item
           name="amount"
