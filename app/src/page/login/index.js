@@ -6,16 +6,16 @@ import React from "react"
 import { useAuth } from "src/hook/useAuth"
 
 //Antd Import
-import { Form, Input, Button, Checkbox, message } from "antd"
+import { Form, Input, Button, message } from "antd"
 import { LockOutlined, UserOutlined } from "@ant-design/icons"
 
 //css Import
 import "src/style/login.css"
 
-const Login = () => {  
+const Login = () => {
   //Hooks
   const auth = useAuth()
-  
+
   const [messageApi, contextHolder] = message.useMessage();
 
   const onFinish = values => {
@@ -33,34 +33,32 @@ const Login = () => {
         onFinish={onFinish}
       >
         <Form.Item
-          name="username"
-          rules={[{ required: true, message: "Please input your username!" }]}
+          name="email"
+          rules={[{ required: true, message: "Please input your email!" }]}
         >
-          <Input prefix={<UserOutlined />} placeholder="Username" />
+          <Input
+            size="large"
+            placeholder="Email"
+            prefix={<UserOutlined />} />
         </Form.Item>
         <Form.Item
           name="password"
           rules={[{ required: true, message: "Please input your password!" }]}
         >
           <Input
-            prefix={<LockOutlined />}
+            size="large"
             type="password"
             placeholder="Password"
-          />
+            prefix={<LockOutlined />} />
         </Form.Item>
         <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
-          <a className="forgot" href="">
-            Forgot password
-          </a>
-        </Form.Item>
-        <Form.Item>
-          <Button type="primary" htmlType="submit" className="btn-login">
+          <Button
+            size="large"
+            type="primary"
+            htmlType="submit"
+            className="btn-login">
             Log in
           </Button>
-          Or <a href="">register now</a>
         </Form.Item>
       </Form >
     </>

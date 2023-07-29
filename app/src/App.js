@@ -36,6 +36,7 @@ export default function App() {
         token: {
           "fontSize": 20,
           "wireframe": true,
+          "borderRadius": 4,
           "colorPrimary": "#e4ff04",
           "colorInfo": "#c5dc06"
         }
