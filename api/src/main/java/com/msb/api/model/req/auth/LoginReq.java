@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @Data
-@LoginVerificationCode
 public class LoginReq {
     @NotEmpty
     private String username;
@@ -14,6 +13,5 @@ public class LoginReq {
     @NotEmpty
     private String password;
 
-    @NotEmpty
     private String verificationCode;
 }
