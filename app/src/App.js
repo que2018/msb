@@ -20,10 +20,10 @@ import Home from "src/page/home"
 import Login from "src/page/login"
 import Register from "src/page/register"
 import Single from "src/page/single"
+import Profile from "src/page/profile"
 import Completed from "src/page/completed"
 import NotFound from "src/page/not_found"
 import About from "src/page/common/about.js"
-
 
 //css Import
 import "src/style/app.css"
@@ -50,6 +50,7 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/completed" element={<Completed />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

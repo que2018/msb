@@ -27,8 +27,8 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const initAuth = async () => {
       const storedToken = window.localStorage.getItem("userData")
-      if (!storedToken) {
-        navigate("/home")
+      if (storedToken) {
+        //navigate("/home")
       }
     }
     initAuth()
@@ -36,16 +36,18 @@ const AuthProvider = ({ children }) => {
 
   const handleLogin = (params, errorCallback) => {
     axios
-      .post("/api/user/login", {
-        "user_name": params.username,
+      .post("/api/login/submit", {
+        "username": params.email,
         "password": params.password
       })
       .then(async response => {
+        console.log(response.data)
+
         setUser(response.data.data)
 
         window.localStorage.setItem("userData", JSON.stringify(response.data.data))
 
-        navigate("/completed")
+        navigate("/profile")
       })
       .catch(err => {
         if (errorCallback) errorCallback(err)
